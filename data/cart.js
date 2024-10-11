@@ -16,6 +16,7 @@ function savetoStorage() {
 }
 
 export function addToCart(productId){
+  // This is how we figure out if the product is already in the cartItem
   let matchingItem;
 
     cart.forEach((cartItem)=> {

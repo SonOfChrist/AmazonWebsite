@@ -1,6 +1,6 @@
 import { cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
-import { formatCurrency } from "./utils/money.js";
+import { formatPrice } from "./utils/money.js";
 
 let productsHTML = '';
 
@@ -23,7 +23,7 @@ products.forEach((product) => {
           </div>
 
           <div class="product-price">
-            $${formatCurrency(product.priceCents)}
+            $${formatPrice(product.priceCents)}
           </div>
 
           <div class="product-quantity-container">
@@ -57,7 +57,7 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-
+// Uodating the cart basket in javascript and also on the webpage (this manages the updates in the webpage)
 function updateCartQuantity(){
   let cartQuantity = 0;
     
