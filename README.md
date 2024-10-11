@@ -1,5 +1,5 @@
-## ABOUT THE AMAZON Projec
-- 
+## ABOUT THE AMAZON Project
+
 ## Amazon Front Page 
 <img class="amazon-Js-Payment-System" src="./images/README/Amazon FrontPage.png" alt="AmazonSystemFrontPage">
 
