@@ -44,7 +44,7 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-// Uodating the cart basket in javascript and also on the webpage (this manages the updates in the webpage)
+// Updating the webpage and the number of quantity in our carts
 function updateCartQuantity(){
   let cartQuantity = 0;
     
@@ -55,8 +55,8 @@ function updateCartQuantity(){
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
-document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
-  button.addEventListener('click', ()=> {
+document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+  button.addEventListener('click', () => {
     const productId = button.dataset.productId;
     addToCart(productId);
     updateCartQuantity();

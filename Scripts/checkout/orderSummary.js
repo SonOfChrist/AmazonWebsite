@@ -1,4 +1,4 @@
-import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
+   import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryoptions.js";
 import { products, getProduct } from "../../data/products.js";
 import { formatPrice } from "../utils/money.js";
@@ -12,7 +12,7 @@ export function renderOrderSummary () {
   cart.forEach((cartItem) => {
       const productId = cartItem.productId;
 
-      const matchingProduct= getProduct(productId);
+      const matchingProduct = getProduct(productId);
 
       const deliveryOptionId = cartItem.deliveryOptionId;
 
@@ -35,33 +35,20 @@ export function renderOrderSummary () {
               </div>
 
               <div class="cart-item-details-grid">
-                <img class="product-image"
-                  src="${matchingProduct.image}">
+                <img class="product-image" src="${matchingProduct.image}">
 
                 <div class="cart-item-details">
-                  <div class="product-name">
-                    ${matchingProduct.name}
-                  </div>
-                  <div class="product-price">
-                    $${formatPrice(matchingProduct.priceCents)}
-                  </div>
+                  <div class="product-name"> ${matchingProduct.name} </div>
+                  <div class="product-price"> $${formatPrice(matchingProduct.priceCents)} </div>
                   <div class="product-quantity">
-                    <span>
-                      Quantity: <span class="quantity-label">${cartItem.quantity}</span>
-                    </span>
-                    <span class="update-quantity-link link-primary">
-                      Update
-                    </span>
-                    <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
-                      Delete
-                    </span>
+                    <span> Quantity: <span class="quantity-label">${cartItem.quantity}</span> </span>
+                    <span class="update-quantity-link link-primary"> Update </span>
+                    <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}"> Delete </span>
                   </div>
                 </div>
 
                 <div class="delivery-options">
-                  <div class="delivery-options-title">
-                    Choose a delivery option:
-                  </div>
+                  <div class="delivery-options-title"> Choose a delivery option: </div>
                   ${deliveryOptionsHTML(matchingProduct, cartItem)}
                 </div>
               </div>
