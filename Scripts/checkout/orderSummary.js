@@ -1,7 +1,7 @@
-   import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
+import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryoptions.js";
 import { products, getProduct } from "../../data/products.js";
-import { formatPrice } from "../utils/money.js";
+import { formatCurrency } from "../utils/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 
@@ -39,7 +39,7 @@ export function renderOrderSummary () {
 
                 <div class="cart-item-details">
                   <div class="product-name"> ${matchingProduct.name} </div>
-                  <div class="product-price"> $${formatPrice(matchingProduct.priceCents)} </div>
+                  <div class="product-price"> $${formatCurrency(matchingProduct.priceCents)} </div>
                   <div class="product-quantity">
                     <span> Quantity: <span class="quantity-label">${cartItem.quantity}</span> </span>
                     <span class="update-quantity-link link-primary"> Update </span>
@@ -63,7 +63,7 @@ export function renderOrderSummary () {
           const today = dayjs();
           const deliveryDate = today.add(deliveryOption.deliveryDays,'days');
           const dateString = deliveryDate.format('dddd, MMMM, D');
-          const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatPrice(deliveryOption.priceCents)} - `;
+          const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} - `;
           const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
           html += ` 
