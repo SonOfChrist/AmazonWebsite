@@ -7,7 +7,7 @@ This Project has been Created by STANLEY MOCHOGE but it has been referenced from
 
 ### Project Creation
 - **[STANLEY MOCHOGE](https://supersimple.dev/)**
-- **[SuperSimpleDev](https://www.youtube.com/watch?v=EerdGm-ehJQ&t=36643s)**
+- **[SuperSimpleDev](https://www.youtube.com/watch?v=EerdGm-ehJQ&t=36643s)** YouTube channel... Learning Javascript
 
 <p align="center">Creating the Front-Amazon Page</p>
 <p align="center">Creating the CheckOut-Cart-Payment Page</p>
