@@ -93,6 +93,7 @@ export function renderOrderSummary () {
               const productId = link.dataset.productId;
               removeFromCart(productId);
               
+              // removing the product from the front-end page and the function on which product id to be removed
               const container = document.querySelector(
                   `.js-cart-item-container-${productId}`
               );
@@ -103,7 +104,7 @@ export function renderOrderSummary () {
       })
   });
   document.querySelectorAll('.js-delivery-option').forEach((element) =>{
-    element.addEventListener('click', () =>{
+    element.addEventListener('click', () => {
       const {productId, deliveryOptionId}= element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();

@@ -44,16 +44,15 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-// Updating the webpage and the number of quantity in our carts
+// Updating the webpage and the number of quantity in our carts it doesn't manage the cart
 function updateCartQuantity(){
   let cartQuantity = 0;
     
     cart.forEach((cartItem) => {
       cartQuantity += cartItem.quantity;
     });
-
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-}
+};
 
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
   button.addEventListener('click', () => {
