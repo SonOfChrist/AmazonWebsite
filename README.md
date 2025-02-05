@@ -3,9 +3,12 @@ This Project has been Created by STANLEY MOCHOGE but it has been referenced from
 ## Amazon Buying and PaymentStructure
 <img class="amazon-Js-Payment-System" src="./images/README/Front and PaymentStructure.png" alt="AmazonSystem-Buying && PaymentStructure">
 
-## Testing
-<img class="#" src="#" alt="#">
-<p align="center">#</p>
+## Testing Our Code
+- We can open our website and try out the code [ManualTesting]
+<p align="center"> AutomatedTesting </p>
+
+- Using code to test code [AutomatedTesting] 
+<img class="amazon-Js-automated-Teststing" src="./images/Testing/Manual And Automated Testing.png" alt="manual/Automated-Testing">
 -
 
 ### Project Creation
