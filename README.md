@@ -5,7 +5,7 @@ This Project has been Created by STANLEY MOCHOGE but it has been referenced from
 
 ## Testing Our Code
 - Using code to test code [AutomatedTesting] 
-<img class="amazon-Js-automated-Teststing" src="./images/Testing/Manual And Automated Testing.png" alt="manual/Automated-Testing">
+<img class="amazon-Js-automated-Teststing" src="./images/Testing/Test-Format_Currency..Automated.png" alt="manual/Automated-Testing">
 
 ## Testing Framework
 
