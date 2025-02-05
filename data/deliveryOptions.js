@@ -1,3 +1,4 @@
+// Helping the buyer to choose delivery date, time and the cost
 export const deliveryOptions = [{
     id: '1',
     deliveryDays: 7,

@@ -25,7 +25,7 @@ export function addToCart(productId){
         matchingItem = cartItem;
       }
     });
-    // Update to the cart
+    // Update to the cart and the delivery options of the amount data that we want to use
     if (matchingItem) {
       matchingItem.quantity += 1;
     } else {
