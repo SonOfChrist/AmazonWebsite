@@ -5,7 +5,7 @@ This Project has been Created by STANLEY MOCHOGE but it has been referenced from
 
 ## Jasmine Integration Test
 - Automed test for the Amozon Project
-<img class="Intergratio-Testisng" src="./images/Testing/JasmineTest Framework Pass.png"  
+<img class="Intergratio-Testisng" src="./images/Testing/JasmineTest Framework Pass.png" alt="Jasmine-Automated-Intergration">
 
 ### Project Creation
 - **[STANLEY MOCHOGE](https://supersimple.dev/)**
