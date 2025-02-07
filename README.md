@@ -3,12 +3,9 @@ This Project has been Created by STANLEY MOCHOGE but it has been referenced from
 ## Amazon Buying and PaymentStructure
 <img class="amazon-Js-Payment-System" src="./images/README/Front and PaymentStructure.png" alt="AmazonSystem-Buying && PaymentStructure">
 
-## Testing Our Code
-- Using code to test code [AutomatedTesting] 
-<img class="amazon-Js-automated-Teststing" src="./images/Testing/Test-Format_Currency..Automated.png" alt="manual/Automated-Testing">
-
-## Testing Framework Jasmine
-- 
+## Jasmine Integration Test
+- Automed test for the Amozon Project
+<img class="Intergratio-Testisng" src="./images/Testing/JasmineTest Framework Pass.png"  
 
 ### Project Creation
 - **[STANLEY MOCHOGE](https://supersimple.dev/)**
