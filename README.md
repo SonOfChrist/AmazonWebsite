@@ -3,6 +3,10 @@ This Project has been Created by STANLEY MOCHOGE but it has been referenced from
 ## Amazon Buying and PaymentStructure
 <img class="amazon-Js-Payment-System" src="./images/README/Front and PaymentStructure.png" alt="AmazonSystem-Buying && PaymentStructure">
 
+## Data-Products-POWER BI
+<p>I have conducted a comprehensive analysis of the provided sales dataset using Excel, SQL and Power Bi to derive a meaningful insight and Recomendation</p> 
+<img src="./images/Power-Bi/PowerBi-Project Screen Shot.png" alt="Power-Bi-Insight_Project">
+
 ## Jasmine Integration Test
 - Automed test for the Amozon Project
 <img class="Intergratio-Testisng" src="./images/Testing/JasmineTest Framework Pass.png" alt="Jasmine-Automated-Intergration">
