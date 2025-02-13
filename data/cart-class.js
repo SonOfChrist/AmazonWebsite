@@ -1,16 +1,16 @@
 class Cart {
     cartItems;
-    localStorageKey;
+    #localStorageKey;
 
-    constructor (localStorageKey){
-        this.localStorageKey = localStorageKey
-        this.LoadFromStorage();
+    constructor (localStorageKey) {
+        this.#localStorageKey = localStorageKey
+        this.#LoadFromStorage();
     };
 
-    LoadFromStorage() {
-        this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
+    #LoadFromStorage() {
+        this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
-        if (!this.cartItems){
+        if (!this.cartItems) {
             this.cartItems = [{
                 productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
                 quantity: 2,
@@ -24,15 +24,15 @@ class Cart {
     };
 
     savetoStorage() {
-        localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+        localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
     };
 
-    addToCart(productId){
+    addToCart(productId) {
     // This is how we figure out if the product is already in the cartItem
     let matchingItem;
 
         this.cartItems.forEach((cartItem)=> {
-            if (productId === cartItem.productId){
+            if (productId === cartItem.productId) {
                 matchingItem = cartItem;
             }
         });
@@ -47,7 +47,7 @@ class Cart {
             });
         }
         this.savetoStorage()
-    }
+    };
 
     removeFromCart(productId) {
         const newCart = [];
@@ -66,7 +66,7 @@ class Cart {
     let matchingItem;
 
         this.cartItems.forEach((cartItem)=> {
-        if (productId === cartItem.productId){
+        if (productId === cartItem.productId) {
             matchingItem = cartItem;
         }
         });
@@ -74,7 +74,7 @@ class Cart {
         matchingItem.deliveryOptionId = deliveryOptionId;
         
         this.savetoStorage();
-    }
+    };
 };
 
 
