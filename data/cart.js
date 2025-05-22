@@ -22,8 +22,9 @@ function savetoStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 };
 
+// Testing the functionality of adding --->>>
 export function addToCart(productId){
-  // This is how we figure out if the product is already in the cartItem
+  
   let matchingItem;
 
     cart.forEach((cartItem)=> {
@@ -31,7 +32,7 @@ export function addToCart(productId){
         matchingItem = cartItem;
       }
     });
-    // Update to the cart and the delivery options of the amount data that we want to use
+
     if (matchingItem) {
       matchingItem.quantity += 1;
     } else {
