@@ -1,3 +1,4 @@
+// Classes to Genarate Objects in The OOP progamming basically an object Generator
 class Cart {
     cartItems;
     #localStorageKey;
@@ -77,7 +78,7 @@ class Cart {
     };
 };
 
-
+// instance of a class 
 const cart = new Cart('cart-oop');
 const businessCart = new Cart('cart-business');
 

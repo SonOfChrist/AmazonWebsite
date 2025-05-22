@@ -1,3 +1,4 @@
+// Function to Genarate Object in the OOP 
 function Cart(localStorageKey) { 
     const cart = {
     cartItems: undefined,
@@ -22,7 +23,6 @@ function Cart(localStorageKey) {
     },
 
     addToCart(productId){
-    // This is how we figure out if the product is already in the cartItem
     let matchingItem;
 
         this.cartItems.forEach((cartItem)=> {
@@ -30,7 +30,7 @@ function Cart(localStorageKey) {
                 matchingItem = cartItem;
             }
         });
-        // Update to the cart and the delivery options of the amount data that we want to use
+        
         if (matchingItem) {
         matchingItem.quantity += 1;
         } else {
@@ -78,9 +78,6 @@ const cart = Cart('cart-oop');
 const businessCart = Cart('cart-business');
 
 cart.LoadFromStorage();
-
 businessCart.LoadFromStorage();
 
-console.log(cart)
-console.log(businessCart)
 
