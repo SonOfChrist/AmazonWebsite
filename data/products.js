@@ -51,11 +51,13 @@ class Clothing extends Product {
   };
 };
 
-/*
+/* built in class to generate class
 const date  = new Date()
 console.log(date)
-console.log(date.toLocaleTimeString());
+console.log(date.toLocaleTimeString())   --- this method basically gives us the current time;
 */
+
+// Loading the products from back-end
 export let products =[]
 
 export function loadProducts (fun) {
@@ -63,11 +65,11 @@ export function loadProducts (fun) {
     xhr.addEventListener('load', () => {
       products = JSON.parse(xhr.response)
           .map((productDetails) => {
-        if (productDetails.type === 'clothing') {
-          return new Clothing(productDetails)
-        }
-        return new Product (productDetails);
-      });
+            if (productDetails.type === 'clothing') {
+              return new Clothing(productDetails)
+            }
+            return new Product (productDetails);
+          });
 
       console.log('loads products');
 
