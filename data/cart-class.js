@@ -1,4 +1,6 @@
 // Classes to Genarate Objects in The OOP progamming basically an object Generator
+// # made the localstorageKey a private property
+// field is the same a property
 class Cart {
     cartItems;
     #localStorageKey;

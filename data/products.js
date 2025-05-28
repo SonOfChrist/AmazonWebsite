@@ -18,6 +18,7 @@ class Product {
   name;
   rating;
   priceCents;
+  
   constructor (productDetails) {
     this.id = productDetails.id;
     this.image = productDetails.image;
