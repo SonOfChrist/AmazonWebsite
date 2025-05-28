@@ -18,6 +18,7 @@ function Cart(localStorageKey) {
             }];
         }
     },
+    
     savetoStorage() {
         localStorage.setItem(localStorageKey, JSON.stringify(this.cartItems));
     },

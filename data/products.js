@@ -37,13 +37,15 @@ class Product {
   }
 };
 
+// Inheritance from parent Product
 class Clothing extends Product {
   sizeChartLink;
 
   constructor (productDetails){
-    super(productDetails)
+    super(productDetails)                             // Super calls the constructor of the parent 
     this.sizeChartLink = productDetails.sizeChartLink;
   };
+  // overide the parents method /Method overriding
   extraInfoHTML() {
     return `<a href="${this.sizeChartLink}" target="_blank">Size Chart</a>`;
   };

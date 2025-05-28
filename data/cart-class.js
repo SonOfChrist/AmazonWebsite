@@ -1,9 +1,9 @@
 // Classes to Genarate Objects in The OOP progamming basically an object Generator
-// # made the localstorageKey a private property
-// field is the same a property
+// # private property & private method
+// field is the thing same a property
 class Cart {
     cartItems;
-    #localStorageKey;
+    #localStorageKey;    //Private property
 
     constructor (localStorageKey) {
         this.#localStorageKey = localStorageKey
@@ -31,7 +31,6 @@ class Cart {
     };
 
     addToCart(productId) {
-    // This is how we figure out if the product is already in the cartItem
     let matchingItem;
 
         this.cartItems.forEach((cartItem)=> {
@@ -39,7 +38,6 @@ class Cart {
                 matchingItem = cartItem;
             }
         });
-        // Update to the cart and the delivery options of the amount data that we want to use
         if (matchingItem) {
         matchingItem.quantity += 1;
         } else {
