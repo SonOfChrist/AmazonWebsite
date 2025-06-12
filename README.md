@@ -21,4 +21,11 @@ This Project has been Created by STANLEY MOCHOGE but it has been referenced from
 
 **[<p align="center">Created By STANLEY MOCHOGE</p>](https://supersimple.dev/)**
 
+ ### ⚙️ Quick Start
+```bash
+git clone https://github.com/SonOfChrist/AmazonWebsite.git
+cd yourproject
+go to LiveServer
+npm install packages
+
 
