@@ -1,10 +1,8 @@
-# 🛒 Amazon Project
-
+# 🛒 Amazon Project Using JavaScript
 Welcome to the **Amazon Project**!  
 Created by **Stanley Mochoge** and inspired by [SuperSimpleDev](https://www.youtube.com/watch?v=EerdGm-ehJQ&t=36643s), this project is designed to help developers build dynamic, professional websites using JavaScript.
 
 ---
-
 ## 🚀 Features
 
 - **Amazon Buying & Payment Structure**  
@@ -25,36 +23,28 @@ Created by **Stanley Mochoge** and inspired by [SuperSimpleDev](https://www.yout
 - **Automated Testing with Jasmine**  
   Automated integration tests for the Amazon Project.  
   <img src="./images/Testing/JasmineTest Framework Pass.png" alt="Jasmine-Automated-Integration" width="600">
-
 ---
-
 ## 🛠️ Quick Start
 
 1. **Clone the repository**
     ```bash
     git clone https://github.com/SonOfChrist/AmazonWebsite.git
     cd AmazonWebsite
+    Open with Live Server
     ```
-
 2. **Install dependencies**
     ```bash
-    npm install
+    For now there are no dependecies [Html, Css && JavaScript]
+    npm ---
     ```
-
 3. **Run the project**
     - Open with Live Server in VS Code or your preferred method.
-
 ---
-
 ## 📊 Data Insights
-
 - Sales data analyzed with Power BI, Excel, and SQL.
 - Actionable recommendations provided based on insights.
-
 ---
-
 ## 👨‍💻 Author
-
 <p align="center">
   <b>Created by Stanley Mochoge</b>  
   <a href="https://supersimple.dev/">supersimple.dev</a>
