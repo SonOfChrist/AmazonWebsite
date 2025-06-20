@@ -2,6 +2,9 @@ export let cart;
 
 LoadFromStorage();
 
+// This module manages the shopping cart functionality, including adding, removing, and updating items in the cart.
+// It also handles saving the cart to localStorage for persistence across page reloads.
+// It initializes the cart from localStorage or sets a default cart if none exists.
 export function LoadFromStorage(){
   cart = JSON.parse(localStorage.getItem('cart'));
 
@@ -22,7 +25,8 @@ function savetoStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-// Testing the functionality of adding --->>>
+// This function adds a product to the cart, or increases the quantity if it already exists
+// It also saves the cart to localStorage
 export function addToCart(productId){
   
   let matchingItem;
@@ -45,6 +49,7 @@ export function addToCart(productId){
     savetoStorage()
 };
 
+// This function removes a product from the cart by its productId
 export function removeFromCart(productId) {
   const newCart = [];
 
@@ -59,6 +64,7 @@ export function removeFromCart(productId) {
   savetoStorage();
 };
 
+// This function updates the delivery option for a product in the cart
 export function updateDeliveryOption(productId, deliveryOptionId) {
    let matchingItem;
 
