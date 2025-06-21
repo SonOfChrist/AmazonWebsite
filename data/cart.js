@@ -1,15 +1,14 @@
+// This module manages the shopping cart functionality, including adding, removing, and updating items in the cart.
 export let cart;
 
 LoadFromStorage();
 
-// This module manages the shopping cart functionality, including adding, removing, and updating items in the cart.
 // It also handles saving the cart to localStorage for persistence across page reloads.
 // It initializes the cart from localStorage or sets a default cart if none exists.
 export function LoadFromStorage(){
   cart = JSON.parse(localStorage.getItem('cart'));
 
-  // If cart is null or undefined, set a default cart
-  // This is useful for testing or if the cart is empty
+  // If cart is null or undefined, set a default cart, this is useful for testing or if the cart is empty
   if (!cart){
     cart = [{
         productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
