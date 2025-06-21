@@ -8,6 +8,8 @@ LoadFromStorage();
 export function LoadFromStorage(){
   cart = JSON.parse(localStorage.getItem('cart'));
 
+  // If cart is null or undefined, set a default cart
+  // This is useful for testing or if the cart is empty
   if (!cart){
     cart = [{
         productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
@@ -52,13 +54,11 @@ export function addToCart(productId){
 // This function removes a product from the cart by its productId
 export function removeFromCart(productId) {
   const newCart = [];
-
   cart.forEach((cartItem) => {
     if(cartItem.productId !== productId) {
       newCart.push(cartItem);
     }
   });
-  
   cart = newCart;
 
   savetoStorage();

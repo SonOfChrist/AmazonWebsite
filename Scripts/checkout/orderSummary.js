@@ -6,14 +6,17 @@ import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 
 
+// This function renders the order summary section of the checkout page
+// It displays the items in the cart, their delivery options, and allows updating or deleting items
 export function renderOrderSummary () {
   let cartSummaryHTML = '';
 
   cart.forEach((cartItem) => {
+    
       const productId = cartItem.productId;
 
       const matchingProduct = getProduct(productId);
-
+    
       const deliveryOptionId = cartItem.deliveryOptionId;
 
       const deliveryOption = getDeliveryOption(deliveryOptionId);
@@ -23,11 +26,10 @@ export function renderOrderSummary () {
             deliveryOption.deliveryDays,
             'days'
           );
-          const dateString = deliveryDate.format(
-            'dddd, MMMM D'
-      );
+          const dateString = deliveryDate.format('dddd, MMMM D');
 
-
+      // Generate the HTML for the delivery options after looping through the Cart items
+      // and the cart item details
       cartSummaryHTML += `
       <div class="cart-item-container js-cart-item-container js-cart-item-container-${matchingProduct.id}">
               <div class="delivery-date">
@@ -42,8 +44,14 @@ export function renderOrderSummary () {
                   <div class="product-price">${matchingProduct.getPrice()}</div>
                   <div class="product-quantity js-product-quantity-${matchingProduct.id}">
                     <span> Quantity: <span class="quantity-label">${cartItem.quantity}</span> </span>
-                    <span class="update-quantity-link link-primary"> Update </span>
-                    <span class="delete-quantity-link link-primary js-delete-link js-delete-link-${matchingProduct.id}" data-product-id="${matchingProduct.id}"> Delete </span>
+                    
+                    <span class="update-quantity-link link-primary js-update-link js-update-link-${matchingProduct.id}" data-product-id="${matchingProduct.id}"> 
+                      Update 
+                    </span>
+                    
+                    <span class="delete-quantity-link link-primary js-delete-link js-delete-link-${matchingProduct.id}" data-product-id="${matchingProduct.id}">
+                      Delete 
+                    </span>
                   </div>
                 </div>
 
@@ -86,23 +94,45 @@ export function renderOrderSummary () {
         return html;
       }
       
-
       document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
+      
+
+      // Add event listeners for the update and delete links
+      // Update the quantity of a product in the cart
+      document.querySelectorAll('.js-update-link').forEach((link) => {
+          link.addEventListener('click', () => {
+              const productId = link.dataset.productId;
+              const quantityElement = document.querySelector(`.js-product-quantity-${productId} .quantity-label`);
+              const newQuantity = parseInt(quantityElement.textContent) + 1;
+              
+              cart.forEach((cartItem) => {
+                  if (cartItem.productId === productId) {
+                      cartItem.quantity = newQuantity;
+                  }
+              });
+              
+              localStorage.setItem('cart', JSON.stringify(cart));
+              
+              // Update the quantity display
+              quantityElement.textContent = newQuantity;
+
+              renderPaymentSummary();
+          });
+      });
+
       document.querySelectorAll('.js-delete-link').forEach((link) => {
           link.addEventListener('click', () => {
               const productId = link.dataset.productId;
               removeFromCart(productId);
-              
-              // removing the product from the front-end page and the function on which product id to be removed
-              const container = document.querySelector(
-                  `.js-cart-item-container-${productId}`
-              );
+            
+              const container = document.querySelector(`.js-cart-item-container-${productId}`);
               container.remove();
 
               renderPaymentSummary();
           });
       })
   });
+
   document.querySelectorAll('.js-delivery-option').forEach((element) =>{
     element.addEventListener('click', () => {
       const {productId, deliveryOptionId} = element.dataset;
