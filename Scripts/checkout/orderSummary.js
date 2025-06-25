@@ -22,11 +22,8 @@ export function renderOrderSummary () {
       const deliveryOption = getDeliveryOption(deliveryOptionId);
 
       const today = dayjs();
-          const deliveryDate = today.add(
-            deliveryOption.deliveryDays,
-            'days'
-          );
-          const dateString = deliveryDate.format('dddd, MMMM D');
+      const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
+      const dateString = deliveryDate.format('DD/MMMM/YYYY');
 
       // Generate the HTML for the delivery options after looping through the Cart items
       // and the cart item details
@@ -63,36 +60,37 @@ export function renderOrderSummary () {
             </div>
       `;
 
-      function deliveryOptionsHTML(matchingProduct, cartItem){
+  function deliveryOptionsHTML(matchingProduct, cartItem){
 
-        let html = '';
+    let html = '';
 
-        deliveryOptions.forEach((deliveryOption) => {
-          const today = dayjs();
-          const deliveryDate = today.add(deliveryOption.deliveryDays,'days');
-          const dateString = deliveryDate.format('dddd, MMMM D');
-          const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} - `;
-          const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
+    deliveryOptions.forEach((deliveryOption) => {
+      const today = dayjs();
+      const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
+      const dateString = deliveryDate.format('dddd, MMMM D');
+      const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} - `;
+      const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
-          html += ` 
-          <div class="delivery-option js-delivery-option" data-product-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOption.id}">
-                    <input type="radio"
+        html += ` 
+        <div class="delivery-option js-delivery-option" data-product-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOption.id}">
+                  <input type="radio"
                     ${isChecked ? 'checked' : ''}
-                      class="delivery-option-input"
-                      name="delivery-option-${matchingProduct.id}">
-                    <div>
-                      <div class="delivery-option-date">
-                        ${dateString}
-                      </div>
-                      <div class="delivery-option-price">
-                        ${priceString} Shipping
-                      </div>
+                    class="delivery-option-input"
+                    name="delivery-option-${matchingProduct.id}">
+                  <div>
+                    <div class="delivery-option-date">
+                      ${dateString}
+                    </div>
+                    <div class="delivery-option-price">
+                      ${priceString} Shipping
                     </div>
                   </div>
-            `
-        });
-        return html;
-      }
+                </div>
+          `
+    });
+
+    return html;
+  }
       
       document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
       
@@ -142,5 +140,6 @@ export function renderOrderSummary () {
     });
   });
 };
+
 
 

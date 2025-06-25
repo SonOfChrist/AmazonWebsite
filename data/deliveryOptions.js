@@ -1,4 +1,5 @@
-// Helping the buyer to choose delivery date, time and the cost
+// This file contains the delivery options available for products in the store.
+// Each delivery option has an ID, delivery days, and price in cents.
 export const deliveryOptions = [{
     id: '1',
     deliveryDays: 7,
@@ -13,6 +14,8 @@ export const deliveryOptions = [{
     priceCents:999
 }];
 
+// This function retrieves a delivery option by its ID.
+// If the ID does not match any delivery option, it returns the first option by default.
 export function getDeliveryOption(deliveryOptionId) {
     let deliveryOption;
 
