@@ -1,7 +1,9 @@
+// Cart Object in OOP Style Organizing the Cart functionality in an Object-Oriented Programming (OOP) style.
 // Function to Genarate Object in the OOP 
+// Tries to respresent the real world
 function Cart(localStorageKey) { 
     const cart = {
-    cartItems: undefined,
+        cartItems: undefined,
 
         LoadFromStorage() {
         this.cartItems = JSON.parse(localStorage.getItem(localStorageKey));
@@ -23,6 +25,7 @@ function Cart(localStorageKey) {
         localStorage.setItem(localStorageKey, JSON.stringify(this.cartItems));
     },
 
+    //
     addToCart(productId){
     let matchingItem;
 
@@ -44,6 +47,7 @@ function Cart(localStorageKey) {
         this.savetoStorage()
     },
 
+    //
     removeFromCart(productId) {
         const newCart = [];
 
@@ -80,5 +84,3 @@ const businessCart = Cart('cart-business');
 
 cart.LoadFromStorage();
 businessCart.LoadFromStorage();
-
-
