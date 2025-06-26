@@ -1,10 +1,11 @@
-// Classes to Genarate Objects in The OOP progamming basically an object Generator
+// Class is an object Generator & is better way to generate object in OOP
 // # private property & private method
 // field is the thing same a property
 class Cart {
     cartItems;
     #localStorageKey;    //Private property
 
+    // Setup Code
     constructor (localStorageKey) {
         this.#localStorageKey = localStorageKey
         this.#LoadFromStorage();
