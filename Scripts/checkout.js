@@ -1,6 +1,6 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
-import { loadProducts } from "../data/products.js";
+import { loadProducts, loadProductsFetch } from "../data/products.js";
 //import '../data/backend-practice.js'
 //import '../data/cart-class.js'
 //import '../data/cart-oop.js'
@@ -12,11 +12,28 @@ import { loadProducts } from "../data/products.js";
 }).then(() => {
      renderOrderSummary();
      renderPaymentSummary();
- });
+});
+
+/*
+promise.all([
+    loadProductsFetch(),
+    newPromise((resolve) => {
+        loadCart(() =>{
+            resolve(value2)
+        });
+    });
+]).then((values) => {
+    console.log(values)
+    renderOrderSummary();
+    renderPaymentSummary();
+});
+*/
 
 /*
 loadProducts(()=> {
-    renderOrderSummary();
-    renderPaymentSummary();
+    loadCart(()=> {
+        renderOrderSummary();
+        renderPaymentSummary();
+    });
 });
 */
