@@ -37,7 +37,7 @@ class Product {
   }
 };
 
-// Inheritance from parent Product
+// Inherit from  Product
 class Clothing extends Product {
   sizeChartLink;
 
@@ -46,6 +46,7 @@ class Clothing extends Product {
     this.sizeChartLink = productDetails.sizeChartLink;
   };
   // overide the parents method /Method overriding
+  // super.extraInfoHTML()
   extraInfoHTML() {
     return `<a href="${this.sizeChartLink}" target="_blank">Size Chart</a>`;
   };
@@ -53,8 +54,7 @@ class Clothing extends Product {
 
 /* built in class to generate class
 const date  = new Date()
-console.log(date)
-console.log(date.toLocaleTimeString())   --- this method basically gives us the current time;
+date.toLocaleTimeString()  --- this method basically gives us the current time;
 */
 
 // Loading the products from back-end
@@ -71,7 +71,7 @@ export function loadProducts (fun) {
             return new Product (productDetails);
           });
 
-      console.log('loads products');
+      console.log('loading products');
 
       fun();
     });
