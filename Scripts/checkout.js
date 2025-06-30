@@ -38,3 +38,24 @@ loadProducts(()=> {
     });
 });
 */
+
+/*
+async function loadPage() {
+    try {
+        //throw 'error 1'
+        await loadProductsFetch();
+        
+        const value await new Promise((resolve, reject) => {
+            //throw 'error2'
+            loadCart(() => {
+                reject('error 3')
+                resolve('value 3')
+            })
+        })
+    }
+} catch (error) {
+    console.log('Unexpected error. Please try again later.')
+}
+    renderOrderSummary();
+    renderPaymentSummary();
+*/
