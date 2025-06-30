@@ -54,7 +54,7 @@ class Clothing extends Product {
 
 
 
-// Loading the products from back-end
+// Loading the products from back-end and it uses a callback for requests and responses
 export let products =[]
 
 export function loadProducts (fun) {
@@ -73,9 +73,13 @@ export function loadProducts (fun) {
       fun();
     });
 
+    xhr.addEventListener('error', (error) => {
+      console.log('Unexpected error. Please try again later.')
+    })
   xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
 }
+
 
 /* built in class to generate class
 const date  = new Date()
@@ -93,9 +97,13 @@ export function loadProductsFetch(){
       }
       return new Product (productDetails);
     });
+  }).catch((error) => {
+    console.log('Unexpected error. Please try again later.')
   });
+
   return promise;
 }
+
 */
 
 /*
